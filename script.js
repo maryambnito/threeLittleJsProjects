@@ -2,10 +2,14 @@ const prompt=require("prompt-sync")();
 console.log("welcome to the Asp.net core test");
 const question1=prompt("what is the Kestrel ?");
 const answer1="web server";
-
+const total=3;
+let correctAnswer=0;
 
 if(question1.toLowerCase()=== answer1)
-   console.log("yeah you got it correct ! ");
+   {
+    console.log("yeah you got it correct ! ");
+    correctAnswer++
+   }
 else{
     console.log("no you got is wrong !" );
 }
@@ -13,7 +17,10 @@ else{
  const answer2="yes";
  
 if(question2.toLowerCase()=== answer2)
+{
 console.log("yeah you got it correct ! ");
+correctAnswer++
+   }
 else{
  console.log("no you got is wrong !" );
 }
@@ -21,7 +28,11 @@ const question3=prompt("Is C# is compiled or interpreted language ?");
  const answer3="compiled language";
  
 if(question3.toLowerCase()=== answer3)
+{
 console.log("yeah you got it correct ! ");
-else{
+correctAnswer++
+   }
+   else{
  console.log("no you got is wrong !" );
 }
+console.log(`you had ${correctAnswer} from ${total} answer! `);
