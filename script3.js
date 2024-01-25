@@ -2,13 +2,19 @@ const prompt=require("prompt-sync")();
 let wins=0;
 let ties=0;
 let losses=0;
-const playerChoice=prompt("Enter rock,paper or scissors:(for guite Enter q) ");
-if(choice==="q"){
-    break;
-}
-if(playerChoice.toLowerCase()!=="rock"&&playerChoice.toLowerCase()!="paper"&&playerChoice.toLowerCase()!="scissors"){
-    console.log("please enter a valid choice: ");
-}
+while(true){
+
+    const playerChoice=prompt("Enter rock,paper or scissors:(or enter q to quit) ");
+    if(playerChoice==="q"){
+        break;
+    }
+    if(playerChoice.toLowerCase()!=="rock"&&
+    playerChoice.toLowerCase()!="paper"&&
+    playerChoice.toLowerCase()!="scissors"){
+        console.log("please enter a valid choice: ");
+        continue;
+    }
+
 const choice=["rock","paper","scissors"];
 const randomIndex=Math.round(Math.random()*2);
 const computerChoice=choice[randomIndex];
@@ -25,3 +31,5 @@ if(computerChoice===playerChoice.toLowerCase()){
     console.log("Lost!");
     losses++;
 }
+}
+console.log(`Wins: ${wins},Losses:${losses},Draw:${ties}`);
